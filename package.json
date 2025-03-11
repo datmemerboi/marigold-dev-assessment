@@ -1,0 +1,10 @@
+{
+  "name": "mg-assessment",
+  "version": "1.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/datmemerboi/marigold-dev-assessment.git",
+  "author": "datmemerboi <shravanssd@gmail.com>",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -24,12 +24,12 @@ function renderProductList(products) {
         : createTextCell("N/A")
     );
     row.appendChild(
-      createTextCell(product.data?.color ? product.data.color : "N/A")
+      createTextCell(product.data?.color || product.data?.Color ? product.data.color ?? product.data.Color : "N/A")
     );
 
     let extraDetailsList = document.createElement("ul");
     for (const key in product.data) {
-      if (!["price", "Price", "color"].includes(key)) {
+      if (!["price", "Price", "color", "Color"].includes(key)) {
         const extraDetail = document.createElement("li");
         extraDetail.innerHTML = `<strong>${key}</strong>: ${product.data[key]}`;
         extraDetailsList.appendChild(extraDetail);

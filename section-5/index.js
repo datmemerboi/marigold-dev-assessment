@@ -19,15 +19,24 @@ function renderProductList(products) {
     const row = document.createElement("tr");
     row.appendChild(createTextCell(product.name));
     row.appendChild(
-      product.data?.price
-        ? createTextCell(`$ ${product.data.price}`)
+      product.data?.price || product.data?.Price
+        ? createTextCell(`$ ${product.data.price ?? product.data.Price}`)
         : createTextCell("N/A")
     );
     row.appendChild(
       createTextCell(product.data?.color ? product.data.color : "N/A")
     );
 
-    row.appendChild(document.createElement("td"));
+    let extraDetailsList = document.createElement("ul");
+    for (const key in product.data) {
+      if (!["price", "Price", "color"].includes(key)) {
+        const extraDetail = document.createElement("li");
+        extraDetail.innerHTML = `<strong>${key}</strong>: ${product.data[key]}`;
+        extraDetailsList.appendChild(extraDetail);
+      }
+    }
+
+    row.appendChild(createCell(extraDetailsList));
 
     productListDom.appendChild(row);
   });

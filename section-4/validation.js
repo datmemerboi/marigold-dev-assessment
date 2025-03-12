@@ -26,6 +26,6 @@ document
     }
 
     if (!isValid) {
-      event.preventDefault;
+      event.preventDefault();
     }
   });

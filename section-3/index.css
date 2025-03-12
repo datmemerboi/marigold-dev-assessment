@@ -1,0 +1,36 @@
+button.styled_button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  color: white;
+}
+
+div.absolute {
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  background-color: orange;
+}
+
+/* Absolute within an absolute div */
+div.absolute div.absolute {
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  background-color: green;
+  opacity: 0.75;
+  z-index: 10; /* Move forward */
+}
+
+div.relative {
+  position: relative;
+  top: 10px;
+  left: 500px;
+  background-color: rebeccapurple;
+}

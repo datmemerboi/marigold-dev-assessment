@@ -7,7 +7,7 @@ document
 
     let isValid = true;
     // Validate name (should not be empty)
-    if (name == "") {
+    if (name === "" || name === null) {
       alert("Name is required.");
       isValid = false;
     }

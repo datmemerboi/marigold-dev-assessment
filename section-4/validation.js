@@ -13,7 +13,7 @@ document
     }
 
     // Validate email (should match email pattern)
-    const emailPattern = /^[a-z0-9.%+-]+@[a-z0-9._-]+\.[a-z]{2,}$/;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
     if (!emailPattern.test(email)) {
       alert("Please enter a valid email address.");
       isValid = false;
